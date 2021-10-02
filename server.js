@@ -9,6 +9,7 @@ var app = express();
 var server = http.createServer(app);
 
 app.use('/static', express.static('static'));
+app.use('/html', express.static('html'));
 app.use('/preview', express.static('html'));
 app.use('/img', express.static('img'));
 app.engine('html', require('ejs').renderFile);
@@ -22,7 +23,7 @@ function renderView(res, name, params) {
 async function main() {
     var collection = await database.test();
     app.get('/', (req, res) => {
-        renderView(res, 'index', {collection: JSON.stringify(collection)});
+        renderView(res, 'index', {fname: '/html/homepage.html'});
     });
 }
 
