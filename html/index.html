@@ -13,11 +13,16 @@
     <link href="/static/css/style.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
+    <div id="level-0" class="container-fluid">
+        <img src="/img/triangle-right.png" class="top-left-arrow">
+        <p id="textOut"></p>
         <div id="center-button">
             <img src="/img/triangle-right.png" class="arrow">
             <button class="btn center-btn" onclick="start()">Play</button>
         </div>
+    </div>
+    <div id="level-1" class="container-fluid" style="z-index: -1">
+        
     </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
