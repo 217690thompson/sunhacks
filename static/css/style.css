@@ -11,14 +11,14 @@ body {
     height: 100vh;
     width: 100vw;
 }
-.center-btn {  
+.center-btn {
     background-color: #1A1A1A;
     border-color: #1A1A1A;
     color: white;
     height: 100px;
     width: 200px;
     font-size: 60px;
-} 
+}
 .center-btn:focus {
     outline: none;
     box-shadow: none;
@@ -33,12 +33,12 @@ body {
     height: 100px;
     width: 200px;
     font-size: 45px;
-} 
+}
 #center-button:hover > img:not(.arrow-clicked){
     transition-duration: .7s;
     animation: ARROW-RIGHT-INITIAL .5s;
     animation-timing-function: cubic-bezier(.37,.39,0,.96);
-    animation-fill-mode: forwards;  
+    animation-fill-mode: forwards;
 }
 #center-button:hover > .center-btn {
     background-color:#1A1A1A;
@@ -127,7 +127,7 @@ body {
 @keyframes ARROW-RIGHT-FINAL {
     0% {
         left: calc(calc(360px + 0vw)/2);
-    }   
+    }
     100%{
         left: calc(calc(360px + 100vw)/2);
     }
@@ -142,6 +142,7 @@ body {
         right: calc(100% - 45px);
     }
 }
+
 @keyframes FADE-IN-TEXT {
     0% {
         opacity: 0%;
@@ -150,3 +151,110 @@ body {
         opacity: 100%;
     }
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* code to make all text unselectable */
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+/* Disables selector ring */
+body:not(.user-is-tabbing) button:focus,
+body:not(.user-is-tabbing) input:focus,
+body:not(.user-is-tabbing) select:focus,
+body:not(.user-is-tabbing) textarea:focus {
+  outline: none;
+}
+
+/* ########################################################## */
+
+.flex-container {
+  width: 100vw;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-container {
+  width: 500px;
+  height: 350px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 500px;
+  height: 350px;
+
+  margin-top: 5px;
+  padding-top: 20px;
+
+  border-radius: 12px;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  background: #1f1f1f;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.199);
+}
+
+.subtitle {
+  font-size: 15px;
+
+  color: rgba(177, 177, 177, 0.3);
+}
+
+input {
+  border: none;
+  border-bottom: solid rgb(143, 143, 143) 1px;
+
+  margin-bottom: 30px;
+
+  background: none;
+  color: rgba(255, 255, 255, 0.555);
+
+  height: 35px;
+  width: 300px;
+}
+
+.submit-btn {
+  cursor: pointer;
+
+  border: none;
+  border-radius: 5px;
+
+  box-shadow: 2px 2px 7px #37AA9C70;
+
+  background: #37AA9C;
+  color: rgba(255, 255, 255, 0.8);
+
+  width: 80px;
+
+  transition: all 1s;
+}
+
+.submit-btn:hover {
+  color: rgb(255, 255, 255);
+
+  box-shadow: none;
+}
+
