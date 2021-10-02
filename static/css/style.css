@@ -70,14 +70,14 @@ body {
     right: 100%;
     top: 2%;
     position: absolute;
-    height: 40px;
+    height: 5vh;
     width: auto;
     opacity: 80%;
 }
 .top-left-arrow.anim {
     right: 100%;
     position: absolute;
-    height: 40px;
+    height: 5vh;
     width: auto;
     opacity: 80%;
     animation: ARROW-TOP-LEFT-IN 1.5s;
@@ -88,31 +88,56 @@ body {
     right: calc(100% - 45px);
     top: 2%;
     position: absolute;
-    height: 40px;
+    height: 5vh;
     width: auto;
     opacity: 80%;
 }
-#textOut {
+#textOut:not(input) {
     position: absolute;
     left: 50px;
     top: 1%;
     font-size: 5vh;
     opacity: 0%;
 }
-#textOut.anim {
+#textOut:not(input).anim {
     position: absolute;
     left: 50px;
     top: 1%;
     font-size: 5vh;
-    animation: FADE-IN-TEXT 2s; 
+    animation: FADE-IN-TEXT 2s;
     animation-timing-function: cubic-bezier(.06,.49,0,1.04);
     animation-fill-mode: forwards;
 }
-#oldText {
+#oldText:not(input) {
     position: absolute;
     left: 50px;
     top: 1%;
     font-size: 5vh;
+}
+.code-container {
+    position: absolute;
+    left: 50px;
+    top: 1%;
+    font-size: 5vh;
+    font-family: monospace;
+    height: 60px;
+    width: auto;
+    margin-bottom: 10px;
+}
+.code-input {
+    left: 50px;
+    font-size: 5vh;
+    font-family: monospace;
+    height: 60px;
+    width: 550px;
+    margin-bottom: 10px;
+}
+.code-submit {
+    font-size: 3vh;
+    font-family: monospace;
+    height: 60px;
+    width: auto;
+    margin-bottom: 10px;
 }
 @keyframes ARROW-RIGHT-INITIAL{
     0% {
@@ -257,4 +282,3 @@ input {
 
   box-shadow: none;
 }
-

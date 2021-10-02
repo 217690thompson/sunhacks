@@ -2,9 +2,15 @@ let hashData = {}
 let levels = {'1': 'level1.html', '2': 'level2.html', '3': 'level3.html', '4': 'level4.html', '5': 'level5.html'}
 
 $(document).ready(function () {
-    _onHashChange();
+    let a = window.location.hash.toString();
+    window.location.hash = '';
     $(window).on('hashchange', _onHashChange);
-})
+    window.location.hash = a;
+});
+
+// $(document).on('click', () => {
+//     _onHashChange();
+// });
 
 function _onHashChange() {
     hashData = {};
@@ -19,7 +25,9 @@ function _onHashChange() {
     }
     if (Object.keys(hashData).includes("level")) {
         if (Object.keys(levels).includes(hashData["level"])) {
+            $('body').empty();
             $('body').load('/html/' + levels[hashData["level"]]);
+            window['level' + hashData['level'] + 'Start']();
         } else {
             window.location.hash = "";
             window.location.reload();

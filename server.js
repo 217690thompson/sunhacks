@@ -47,7 +47,11 @@ async function main() {
         renderView(res, 'index', {fname: '/html/login.html', failed: fail});
     });
     app.get('/', (req, res) => {
-        renderView(res, 'index', {fname: '/html/homepage.html'});
+        let page = 'homepage';
+        // if (window.location.hash && window.location.hash.substring(1, 6) == 'level') {
+        //     page = 'level' + window.location.hash.substring(7);
+        // }
+        renderView(res, 'index', {fname: '/html/' + page + '.html'});
     });
     app.get('/testing', (req, res) => {
         let file = req.query.page;
