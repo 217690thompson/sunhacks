@@ -1,6 +1,5 @@
-    const delay = ms => new Promise(res => setTimeout(res, ms));
-    var speed = 70;
-    var i = 0;
+const delay = ms => new Promise(res => setTimeout(res, ms));
+    var speed = 2000;
     var input;
     
     $(window).on('hashchange', function () {
@@ -8,14 +7,27 @@
             level1Start();
         }
     });
-    
-    function typeOut(){
-        if(i < input.length) {
-            document.getElementById("textOut").innerHTML += input.charAt(i);
-            i++;
-            console.log(i);
-            setTimeout(typeOut, speed); 
+    function sleep(milliseconds) {
+        const date = Date.now();
+        let currentDate = null;
+        do {
+          currentDate = Date.now();
+        } while (currentDate - date < milliseconds);
+      }
+
+    /*async function typeOut(inc){
+        if(inc < input.length) {
+            document.getElementById("textOut").innerHTML += input.charAt(inc);
+            inc++;
+            console.log(inc);
+            setTimeout(typeOut, speed);
         }
+    }*/
+
+    function fadeInText(){
+        const thisP = document.querySelector("#textOut");
+        thisP.innerHTML += input;
+        $(thisP).addClass("anim");
     }
     
     function start(){
@@ -33,7 +45,6 @@
     }
     
     function newLine(){
-        i = 0;
         const newP = document.createElement("p");
         console.log("New line called...");
         arrow = document.querySelector(".top-left-arrow-new");
@@ -50,9 +61,18 @@
     }
     async function level1Start(){
         console.log("Function called...");
-        input = "Hey there!";
-        typeOut();
-        newLine(); 
+        input = "Hello there!"
+        fadeInText();
+        let prom = delay(speed).then((res) => {newLine()});
+        await prom;
+        input = "Welcome to this program.";
+        fadeInText();
+        prom = delay(speed).then((res) => {newLine()});
+        await prom;
+        input = "Can I get your name?";
+        fadeInText();
+        prom = delay(speed).then((res) => {newLine()});
+        await prom;
     }
 
 

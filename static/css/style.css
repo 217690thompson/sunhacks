@@ -97,6 +97,16 @@ body {
     left: 50px;
     top: 1%;
     font-size: 5vh;
+    opacity: 0%;
+}
+#textOut.anim {
+    position: absolute;
+    left: 50px;
+    top: 1%;
+    font-size: 5vh;
+    animation: FADE-IN-TEXT 2s; 
+    animation-timing-function: cubic-bezier(.06,.49,0,1.04);
+    animation-fill-mode: forwards;
 }
 #oldText {
     position: absolute;
@@ -130,5 +140,13 @@ body {
     100% {
         opacity: 80%;
         right: calc(100% - 45px);
+    }
+}
+@keyframes FADE-IN-TEXT {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
     }
 }
