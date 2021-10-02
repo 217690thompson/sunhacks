@@ -1,7 +1,15 @@
 body {
     background-color: #1A1A1A;
+    color: white;
     font-family: 'Advent Pro', sans-serif;
     overflow: hidden;
+}
+.container-fluid{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
 }
 .center-btn {  
     background-color: #1A1A1A;
@@ -11,6 +19,10 @@ body {
     width: 200px;
     font-size: 60px;
 } 
+.center-btn:focus {
+    outline: none;
+    box-shadow: none;
+}
 #center-button {
     position: absolute;
     top: 50%;
@@ -54,6 +66,30 @@ body {
     animation-timing-function: cubic-bezier(.37,.39,0,.96);
     animation-fill-mode: forwards;
 }
+.top-left-arrow {
+    right: 100%;
+    top: 2%;
+    position: absolute;
+    height: 40px;
+    width: auto;
+    opacity: 80%;
+}
+.top-left-arrow.anim {
+    right: 100%;
+    position: absolute;
+    height: 40px;
+    width: auto;
+    opacity: 80%;
+    animation: ARROW-TOP-LEFT-IN 1.5s;
+    animation-timing-function: cubic-bezier(.06,.49,0,1.04);
+    animation-fill-mode: forwards;
+}
+#textOut {
+    position: absolute;
+    left: 3.9%;
+    top: 1%;
+    font-size: 5vh;
+}
 @keyframes ARROW-RIGHT-INITIAL{
     0% {
         opacity: 0%;
@@ -72,11 +108,13 @@ body {
         left: calc(calc(360px + 100vw)/2);
     }
 }
-@keyframes FADE-OUT{
+@keyframes ARROW-TOP-LEFT-IN {
     0% {
-        opacity: 80%;
+        opacity: 0%;
+        right: 100%;
     }
     100% {
-        opacity: 0%;
+        opacity: 80%;
+        right: calc(100% - 45px);
     }
 }
