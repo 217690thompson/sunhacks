@@ -1,7 +1,6 @@
-function hello(){
-    newDiv = document.createElement("div");
-    newNode = document.createTextNode("Hello World... from Javascript!");
-    newDiv.appendChild(newNode);
-    currentDiv = document.getElementsById("modDiv");
-    document.body.insertBefore(newDiv, currentDiv);
+function start(){
+    console.log("Game started...");
+    image = document.querySelector(".arrow");
+    image.classList.add("arrow-clicked");
+    image.classList.remove("arrow");
 }

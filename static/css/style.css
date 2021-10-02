@@ -1,3 +1,82 @@
 body {
-    background-color: blue;
+    background-color: #1A1A1A;
+    font-family: 'Advent Pro', sans-serif;
+    overflow: hidden;
+}
+.center-btn {  
+    background-color: #1A1A1A;
+    border-color: #1A1A1A;
+    color: white;
+    height: 100px;
+    width: 200px;
+    font-size: 60px;
+} 
+#center-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1A1A1A;
+    border-color: #1A1A1A;
+    height: 100px;
+    width: 200px;
+    font-size: 45px;
+} 
+#center-button:hover > img:not(.arrow-clicked){
+    transition-duration: .7s;
+    animation: ARROW-RIGHT-INITIAL .5s;
+    animation-timing-function: cubic-bezier(.37,.39,0,.96);
+    animation-fill-mode: forwards;  
+}
+#center-button:hover > .center-btn {
+    background-color:#1A1A1A;
+    border-color: #1A1A1A;
+    color: white;
+}
+.arrow {
+    transform: translate(-50%, -25%);
+    left: calc(calc(200px - 110vw)/2);
+    top: 50%;
+    position: absolute;
+    height: 40px;
+    width: auto;
+    opacity: 0;
+}
+.arrow-clicked {
+    transform: translate(-50%, -25%);
+    left: calc(calc(360px + 0vw)/2);
+    top: 50%;
+    position: absolute;
+    height: 40px;
+    width: auto;
+    opacity: 80%;
+    animation: ARROW-RIGHT-FINAL .5s;
+    animation-timing-function: cubic-bezier(.37,.39,0,.96);
+    animation-fill-mode: forwards;
+}
+@keyframes ARROW-RIGHT-INITIAL{
+    0% {
+        opacity: 0%;
+        left: calc(calc(200px - 110vw)/2);
+    }
+    100% {
+        opacity: 80%;
+        left: calc(calc(360px + 0vw)/2);
+    }
+}
+@keyframes ARROW-RIGHT-FINAL {
+    0% {
+        left: calc(calc(360px + 0vw)/2);
+    }   
+    100%{
+        left: calc(calc(360px + 100vw)/2);
+    }
+}
+@keyframes FADE-OUT{
+    0% {
+        opacity: 80%;
+    }
+    100% {
+        opacity: 0%;
+    }
 }

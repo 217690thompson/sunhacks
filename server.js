@@ -9,6 +9,7 @@ var server = http.createServer(app);
 
 app.use('/static', express.static('static'))
 app.use('/preview', express.static('html'))
+app.use('/img', express.static('img'))
 
 function renderView(res, name) {
     res.sendFile(__dirname + '/html/' + name.toString() + '.html');
