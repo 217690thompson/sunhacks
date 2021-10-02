@@ -12,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100&display=swap" rel="stylesheet">
     <link href="/static/css/style.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/core/controller.js"></script>
 </head>
 <body>
 
@@ -20,7 +19,15 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
 integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 <script src="/static/js/script.js"></script>
+<script src="/core/controller.js"></script>
 <script>
+    // $(window).on('load', () => {
+    //     let page = 'homepage';
+    //     if (window.location.hash && window.location.hash.substring(1, 6) == 'level') {
+    //         page = 'level' + window.location.hash.substring(7);
+    //         _onHashChange();
+    //     }
+    // })
     $(function(){
         $('body').load("<%= fname.toString() %>");
     });
