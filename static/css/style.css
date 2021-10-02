@@ -84,9 +84,23 @@ body {
     animation-timing-function: cubic-bezier(.06,.49,0,1.04);
     animation-fill-mode: forwards;
 }
+.top-left-arrow-new {
+    right: calc(100% - 45px);
+    top: 2%;
+    position: absolute;
+    height: 40px;
+    width: auto;
+    opacity: 80%;
+}
 #textOut {
     position: absolute;
-    left: 3.9%;
+    left: 50px;
+    top: 1%;
+    font-size: 5vh;
+}
+#oldText {
+    position: absolute;
+    left: 50px;
     top: 1%;
     font-size: 5vh;
 }
