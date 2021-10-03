@@ -1,5 +1,5 @@
 let hashData = {}
-let levels = {'1': 'level1.html', '2': 'level2.html', '3': 'level3.html', '4': 'level4.html', '5': 'level5.html'}
+let levels = {'1': 'level1.html', '2': 'level2.html', '3': 'level3.html', '4': 'level4.html', '5': 'level5.html', '6': 'level6.html'}
 
 $(document).ready(function () {
     let a = window.location.hash.toString();
