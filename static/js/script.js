@@ -19,6 +19,8 @@ function fadeInText(){
 function start(){
     image = document.querySelector(".arrow");
     button = document.querySelector(".btn");
+    $(image).addClass("arrow-clicked");
+    $(image).removeClass("arrow");
     $(button).fadeOut(500, function(){
         button.remove();
         window.location.hash = "level=1";
