@@ -30,12 +30,12 @@ body {
 .logo-text {
     position: absolute;
     z-index: 100;
-    margin-left: calc(50vw - 270px);
+    margin-left: calc(50vw - 200px);
     margin-top: 30vh;
     color: black;
     font-size: 120px;
     display: inline;
-    font-family: 'Merriweather', serif;
+    font-family: 'Advent Pro', serif;
 }
 .logo-text-out {
     animation: LOGO-TEXT-OUT 1s forwards;
