@@ -18,10 +18,14 @@ function fadeInText(){
 
 function start(){
     image = document.querySelector(".arrow");
+    logo = document.querySelector(".logo");
+    logoText = document.querySelector(".logo-text");
     button = document.querySelector(".btn");
     $(image).addClass("arrow-clicked");
     $(image).removeClass("arrow");
-    $(button).fadeOut(500, function(){
+    $(logo).addClass("logo-out");
+    $(logoText).addClass("logo-text-out");
+    $(button).fadeOut(1000, function(){
         button.remove();
         window.location.hash = "level=1";
     });

@@ -7,7 +7,40 @@ body {
     overflow: hidden;
 	height: 100vh;
 }
-.gradient{
+#logo-block {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+.logo {
+    position: relative;
+    opacity: 70%;
+    height: 300px;
+    width: auto;
+    margin-left: calc(50vw - 160px);
+    z-index: 50;
+    animation: BREATHE 7s infinite;
+    animation-timing-function: cubic-bezier(.37,.01,.22,.75);
+    display: inline;
+    margin-top: 15vh;
+}
+.logo-out {
+    animation: LOGO-OUT 1s forwards;
+}
+.logo-text {
+    position: absolute;
+    z-index: 100;
+    margin-left: calc(50vw - 270px);
+    margin-top: 30vh;
+    color: black;
+    font-size: 120px;
+    display: inline;
+    font-family: 'Merriweather', serif;
+}
+.logo-text-out {
+    animation: LOGO-TEXT-OUT 1s forwards;
+}
+.gradient {
     transition-duration: 500ms;
     margin: 0;
     padding: 0;
@@ -17,7 +50,7 @@ body {
     overflow: hidden;
     background: linear-gradient(-45deg, #1A1A1B, #333F44, #65a09c, #65a09c);
 	background-size: 300% 300%;
-	animation: gradient 10s ease infinite;
+	animation: GRADIENT 10s forwards infinite;
 	height: 100vh;
 }
 .switch {
@@ -73,7 +106,7 @@ body {
 }
 #center-button {
     position: absolute;
-    top: 50%;
+    top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: transparent;
@@ -112,7 +145,7 @@ body {
     height: 40px;
     width: auto;
     opacity: 80%;
-    animation: ARROW-RIGHT-FINAL .5s;
+    animation: ARROW-RIGHT-FINAL 1s;
     animation-timing-function: cubic-bezier(.37,.39,0,.96);
     animation-fill-mode: forwards;
 }
@@ -251,6 +284,34 @@ body {
 		background-color:rgba(0, 0, 0, 0); 
 	}
 }
+@keyframes BREATHE {
+    0% {
+        
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes LOGO-OUT {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+@keyframes LOGO-TEXT-OUT {
+    0% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
 html {
   scroll-behavior: smooth;
 }
@@ -346,6 +407,3 @@ input {
 
   box-shadow: none;
 }
-
-
-
