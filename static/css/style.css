@@ -37,6 +37,9 @@ body {
     width: 200px;
     font-size: 45px;
 }
+.message-box {
+    font-size: 3vh;
+}
 #center-button:hover > img:not(.arrow-clicked){
     transition-duration: .7s;
     animation: ARROW-RIGHT-INITIAL .5s;
@@ -94,6 +97,7 @@ body {
     height: 5vh;
     width: auto;
     opacity: 80%;
+    transition: top 1s;
 }
 #textOut:not(input) {
     position: absolute;
