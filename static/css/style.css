@@ -1,8 +1,50 @@
 body {
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: #65a09c;
+    font-family: 'Advent Pro', sans-serif;
+    overflow: hidden;
+	height: 100vh;
+}
+.gradient{
+    transition-duration: 500ms;
+    margin: 0;
+    padding: 0;
     background-color: #1A1A1A;
     color: white;
     font-family: 'Advent Pro', sans-serif;
     overflow: hidden;
+    background: linear-gradient(-45deg, #1A1A1B, #333F44, #65a09c, #65a09c);
+	background-size: 300% 300%;
+	animation: gradient 10s ease infinite;
+	height: 100vh;
+}
+.switch {
+    margin: 0;
+    padding: 0;
+    background-color: #1A1A1A;
+    color: white;
+    font-family: 'Advent Pro', sans-serif;
+    overflow: hidden;
+    background: linear-gradient(-45deg, #1A1A1B, #333F44, #65a09c, #65a09c);
+	background-size: 300% 300%;
+	animation: GRADIENT-SNAP 5s ease;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+	height: 100vh;
+}
+.set {
+    margin: 0;
+    padding: 0;
+    background-color: #1A1A1A;
+    color: white;
+    font-family: 'Advent Pro', sans-serif;
+    overflow: hidden;
+    background: linear-gradient(-45deg, #1A1A1B, #333F44, #65a09c, #65a09c);
+	background-size: 300% 300%;
+	background-position: 100% 50%;
+	height: 100vh;
 }
 * {
     transition: top 1s;
@@ -13,14 +55,17 @@ body {
     left: 0;
     height: 100vh;
     width: 100vw;
+    background-attachment: fixed;
+    
 }
 .center-btn {
-    background-color: #1A1A1A;
-    border-color: #1A1A1A;
+    background-color: transparent;
+    border: none;
     color: white;
     height: 100px;
     width: 200px;
     font-size: 60px;
+    outline: none;
 }
 .center-btn:focus {
     outline: none;
@@ -31,11 +76,12 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #1A1A1A;
-    border-color: #1A1A1A;
+    background-color: transparent;
+    border: none;
     height: 100px;
     width: 200px;
     font-size: 45px;
+    outline: none;
 }
 .message-box {
     font-size: 3vh;
@@ -47,8 +93,6 @@ body {
     animation-fill-mode: forwards;
 }
 #center-button:hover > .center-btn {
-    background-color:#1A1A1A;
-    border-color: #1A1A1A;
     color: white;
 }
 .arrow {
@@ -182,17 +226,39 @@ body {
         opacity: 100%;
     }
 }
-
+@keyframes GRADIENT {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+@keyframes GRADIENT-SNAP {
+    0% {
+        background-position: 0% 50%;
+        background-color:rgba(0, 0, 0, 1.0); 
+    }
+    50%{
+        background-position: 100% 50%;
+        background-color:rgba(0, 0, 0, .8);
+    }
+    100% {
+        background-position: 100% 50%;
+		background-color:rgba(0, 0, 0, 0); 
+	}
+}
 html {
   scroll-behavior: smooth;
 }
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   /* code to make all text unselectable */
   -webkit-user-select: none;
@@ -202,7 +268,6 @@ body {
   -o-user-select: none;
   user-select: none;
 }
-
 /* Disables selector ring */
 body:not(.user-is-tabbing) button:focus,
 body:not(.user-is-tabbing) input:focus,
@@ -212,7 +277,6 @@ body:not(.user-is-tabbing) textarea:focus {
 }
 
 /* ########################################################## */
-
 .flex-container {
   width: 100vw;
   height: 100%;
@@ -221,12 +285,10 @@ body:not(.user-is-tabbing) textarea:focus {
   justify-content: center;
   align-items: center;
 }
-
 .content-container {
   width: 500px;
   height: 350px;
 }
-
 .form-container {
   display: flex;
   justify-content: center;
@@ -247,13 +309,11 @@ body:not(.user-is-tabbing) textarea:focus {
   background: #1f1f1f;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.199);
 }
-
 .subtitle {
   font-size: 15px;
 
   color: rgba(177, 177, 177, 0.3);
 }
-
 input {
   border: none;
   border-bottom: solid rgb(143, 143, 143) 1px;
@@ -266,7 +326,6 @@ input {
   height: 35px;
   width: 300px;
 }
-
 .submit-btn {
   cursor: pointer;
 
@@ -282,10 +341,11 @@ input {
 
   transition: all 1s;
 }
-
 .submit-btn:hover {
   color: rgb(255, 255, 255);
 
   box-shadow: none;
 }
+
+
 

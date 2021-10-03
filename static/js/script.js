@@ -77,10 +77,11 @@ function createInput(paramName) {
 }
 
 async function level1Start() {
+    const animated = document.querySelector('.switch');
     let leftArrow = document.querySelector("img");
     console.log(leftArrow);
     input = "Hello there!"
-    let prom = delay(speed).then((res) => {fadeInText()});
+    prom = delay(speed).then((res) => {fadeInText()});
     await prom;
     $(leftArrow).addClass("anim");
     prom = delay(speed).then((res) => {newLine()});
@@ -94,6 +95,9 @@ async function level1Start() {
     prom = delay(speed).then((res) => {newLine()});
     await prom;
     createInput('name');
+    document.body.style.background = "linear-gradient(-45deg, #1A1A1B, #333F44, #65a09c, #65a09c)";
+    document.body.style.backgroundSize = "300% 300%";
+    document.body.style.backgroundPosition = "100% 50%";
 }
 
 function code(text, color) {
@@ -242,13 +246,6 @@ async function booleanButtonAfter(button, codeInput) {
         await prom;
         input = 'Thank you for learning with me today! More updates will come in the future.';
         fadeInText();
-        // prom = delay(speed).then((res) => {
-        //     $(document).on('keypress', (e) => {
-        //         window.location.hash = 'level=6';
-        //         $(document).off('keypress');
-        //     });
-        // });
-        // await prom;
     }
 }
 
