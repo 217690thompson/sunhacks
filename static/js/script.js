@@ -17,6 +17,7 @@ function fadeInText(){
 }
 
 function start(){
+    image = document.querySelector(".arrow");
     button = document.querySelector(".btn");
     $(button).fadeOut(500, function(){
         button.remove();
@@ -31,7 +32,7 @@ function newLine(){
     oldP.setAttribute('id', 'oldText');
     newP.setAttribute('id', 'textOut');
     newP.style.top = (oldP.getBoundingClientRect().bottom + 4).toString() + "px";
-    arrow = document.querySelector(".top-left-arrow-new");
+    let arrow = document.querySelector(".top-left-arrow-new");
     currentArrowTop = arrow.getBoundingClientRect().top;
     // newArrowTop = currentArrowTop + 60;
     newArrowTop = newP.style.top;
@@ -74,9 +75,12 @@ function createInput(paramName) {
 }
 
 async function level1Start() {
+    let leftArrow = document.querySelector("img");
+    console.log(leftArrow);
     input = "Hello there!"
     let prom = delay(speed).then((res) => {fadeInText()});
     await prom;
+    $(leftArrow).addClass("anim");
     prom = delay(speed).then((res) => {newLine()});
     await prom;
     input = "Welcome to TypeRose.";

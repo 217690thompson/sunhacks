@@ -4,6 +4,9 @@ body {
     font-family: 'Advent Pro', sans-serif;
     overflow: hidden;
 }
+* {
+    transition: top 1s;
+} 
 .container-fluid{
     position: absolute;
     top: 0;
@@ -171,7 +174,6 @@ body {
         right: calc(100% - 45px);
     }
 }
-
 @keyframes FADE-IN-TEXT {
     0% {
         opacity: 0%;
@@ -286,3 +288,4 @@ input {
 
   box-shadow: none;
 }
+
